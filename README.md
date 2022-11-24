@@ -34,6 +34,7 @@ Start the development server on http://localhost:3000
 ```bash
 npm run dev
 ```
+---
 
 > :warning: **If you are having any pinia issiues**: @pinia/nuxt module has some issues installing pinia node_module. In case of errors such as: ERROR Cannot start nuxt: Cannot find module 'pinia/dist/pinia.mjs'
 
