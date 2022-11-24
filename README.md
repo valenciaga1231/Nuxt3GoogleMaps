@@ -6,37 +6,6 @@ In this way you can hold the same instance onf google Map and not use any more A
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more about Nuxt3.
 
-> :warning: **If you are having any pinia issiues**: @pinia/nuxt module has some issues installing pinia node_module. In case of errors such as:
-
-```bash
-ERROR Cannot start nuxt: Cannot find module 'pinia/dist/pinia.mjs'
-```
-
-just complete steps below:
-
--   Delete node_modules
--   Delete package-lock.json
-
-```bash
-# cmd
-npm install --force pinia
-
-#cmd
-npm install
-
-# npm
-npm run dev
-```
-
-or
-
-```
-
-# docker
-docker build -t <image_name> .
-
-```
-
 ## Setup
 
 Make sure to install the dependencies:
@@ -63,6 +32,24 @@ pnpm install --shamefully-hoist
 Start the development server on http://localhost:3000
 
 ```bash
+npm run dev
+```
+
+> :warning: **If you are having any pinia issiues**: @pinia/nuxt module has some issues installing pinia node_module. In case of errors such as: ERROR Cannot start nuxt: Cannot find module 'pinia/dist/pinia.mjs'
+
+complete steps below:
+
+-   Delete node_modules
+-   Delete package-lock.json
+
+```bash
+# cmd
+npm install --force pinia
+
+#cmd
+npm install
+
+# npm
 npm run dev
 ```
 
