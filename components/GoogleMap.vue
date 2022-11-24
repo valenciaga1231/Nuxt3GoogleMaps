@@ -21,10 +21,8 @@ export default defineComponent({
         const map_element = ref();
 
         // Get necessary script for Map initializtion
-        const runtimeConfig = useRuntimeConfig();
         if (process.server) {
-            console.log("This is my google maps API key:\n", runtimeConfig.googleMapKey);
-            console.log("Appending UseHead");
+            const runtimeConfig = useRuntimeConfig();
             useHead({ script: [{ src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.googleMapKey}&callback=initMap&v=weekly` }] });
         }
 
@@ -42,7 +40,11 @@ export default defineComponent({
 
 <style scoped>
 #map {
+    /* Define Map measures */
     height: 400px;
-    width: 100%;
+    width: 50%;
+
+    /* Center Map */
+    margin: auto;
 }
 </style>
