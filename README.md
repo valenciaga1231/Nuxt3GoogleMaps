@@ -15,7 +15,7 @@ Make sure to install the dependencies:
 git clone https://github.com/ValenciagaTutorials/GoogleMapsNuxt3.git
 
 #cmd
-cd GoogleMapsNuxt3
+cd Nuxt3GoogleMaps
 
 # yarn
 yarn install
