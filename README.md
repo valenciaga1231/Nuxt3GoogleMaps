@@ -1,5 +1,7 @@
 # Nuxt 3 Google Maps
 
+This Is not Library to work wiht Google Maps API. This is just a tutorial to add your own Google Maps API to your Nuxt Project.
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more about Nuxt3.
 
 ## Setup
