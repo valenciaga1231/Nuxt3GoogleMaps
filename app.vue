@@ -20,6 +20,12 @@ export default {
 
         // Center Map
         const centerMap = () => map_store.centerMapTo({ lat: 0, lng: 0 });
+        // Get necessary script for Map initializtion
+        if (process.server) {
+            const runtimeConfig = useRuntimeConfig();
+            console.log(runtimeConfig.googleMapKey);
+            useHead({ script: [{ src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.googleMapKey}&v=weekly`, defer: true }] });
+        }
 
         return { map_store, centerMap };
     },

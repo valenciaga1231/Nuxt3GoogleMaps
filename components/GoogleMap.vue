@@ -20,12 +20,6 @@ export default defineComponent({
         // Refs
         const map_element = ref();
 
-        // Get necessary script for Map initializtion
-        if (process.server) {
-            const runtimeConfig = useRuntimeConfig();
-            useHead({ script: [{ src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.googleMapKey}&v=weekly`, defer: true }] });
-        }
-
         onMounted(() => {
             // Pass HTML element to Store
             map_store.google_map_html = map_element.value;
