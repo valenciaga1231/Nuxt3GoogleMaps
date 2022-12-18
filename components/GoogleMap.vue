@@ -4,13 +4,8 @@
     </div>
 </template>
 
-<script lang="ts">
-declare global {
-    interface Window {
-        initMap: () => void;
-    }
-}
-import mapStore from "~~/stores/MapStore";
+<script>
+import mapStore from "~~/stores/MapStore.ts";
 
 export default defineComponent({
     setup() {

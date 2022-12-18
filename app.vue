@@ -23,7 +23,6 @@ export default {
         // Get necessary script for Map initializtion
         if (process.server) {
             const runtimeConfig = useRuntimeConfig();
-            console.log(runtimeConfig.googleMapKey);
             useHead({ script: [{ src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.googleMapKey}&v=weekly`, defer: true }] });
         }
 
