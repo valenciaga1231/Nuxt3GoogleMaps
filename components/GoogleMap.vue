@@ -19,7 +19,7 @@ export default defineComponent({
             // Pass HTML element to Store
             map_store.google_map_html = map_element.value;
 
-            // Pass initMap function to browser's global windows object so Google Map script will find It
+            // Init google map
             map_store.initializeGoogleMap();
         });
 
