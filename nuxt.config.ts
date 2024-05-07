@@ -1,8 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    devtools: { enabled: false },
     runtimeConfig: {
         googleMapKey: "",
     },
-    modules: ["@pinia/nuxt"],
-    typescript: { strict: true },
+    imports: {
+        autoImport: true,
+    },
+    // typescript: {
+    //     typeCheck: true,
+    //     strict: true,
+    // },
 });
