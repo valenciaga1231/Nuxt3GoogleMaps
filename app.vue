@@ -13,10 +13,7 @@
 <script lang="ts">
 export default {
     setup() {
-        // Center Map
-        // centerGoogleMap({ lat: 0, lng: 0 });
-
-        // Get necessary script for Map initializtion
+        // Get necessary script for Map initializtion (google maps API key required!!)
         if (process.server) {
             const runtimeConfig = useRuntimeConfig();
             useHead({ script: [{ src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.googleMapKey}&v=weekly`, defer: true }] });

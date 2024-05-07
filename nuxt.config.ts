@@ -7,8 +7,4 @@ export default defineNuxtConfig({
     imports: {
         autoImport: true,
     },
-    // typescript: {
-    //     typeCheck: true,
-    //     strict: true,
-    // },
 });

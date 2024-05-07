@@ -2,7 +2,7 @@
 
 This is not library to work with Google Maps API. This is just a tutorial to add your own Google Maps API (it's easy) to your Nuxt3 Project.
 
-In this way you can hold the same instance onf google Map and not use any more API calls (until reloaded or re-mounted). Component must not be re-mounted, because new Map object will be created and new API call used. For minimal usage of Google MAP API calls, component must stay hidden in the background of a page if your API calls are limited to not trigger additional API calls.
+In this way you can hold the same instance of google Map and not use any more API calls (until reloaded or re-mounted). Component must not be re-mounted, because new Map object will be created and new API call used. For minimal usage of Google MAP API calls, component must stay hidden in the background of a page if your API calls are limited to not trigger additional API calls.
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more about Nuxt3.
 
