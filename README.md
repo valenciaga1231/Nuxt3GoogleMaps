@@ -27,6 +27,8 @@ npm install
 pnpm install --shamefully-hoist
 ```
 
+Also add this official Vue3 extension to VSCode: https://marketplace.visualstudio.com/items?itemName=Vue.volar
+
 ## Development Server
 
 Start the development server on http://localhost:3000
