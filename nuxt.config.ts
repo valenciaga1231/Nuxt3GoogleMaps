@@ -4,7 +4,4 @@ export default defineNuxtConfig({
     runtimeConfig: {
         googleMapKey: "",
     },
-    imports: {
-        autoImport: true,
-    },
 });

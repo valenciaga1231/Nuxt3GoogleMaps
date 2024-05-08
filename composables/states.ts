@@ -47,10 +47,12 @@ export const initializeGoogleMap = (map_html: HTMLElement): void => {
 
 // Function used to center Google Map to specific coordinates
 export const centerGoogleMap = (lat: number, lng: number): void => {
-    if (!useGoogleMap().value) {
+    const googleMap = useGoogleMap().value;
+
+    if (!googleMap) {
         console.error("google_map is not defined");
         return;
     }
 
-    useGoogleMap().value.setCenter({ lat, lng });
+    googleMap.setCenter({ lat, lng });
 };
