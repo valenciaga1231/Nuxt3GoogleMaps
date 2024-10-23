@@ -11,9 +11,15 @@ export default defineComponent({
 
         onMounted(() => {
             if (!google_map.value) throw new Error("Google Map DOM element not found");
+            const existingMap = useGoogleMapHTML().value;
 
-            useGoogleMapHTML().value = google_map.value; // Save google map html
-            initializeGoogleMap(google_map.value); // Init Google Map
+            // Append existing Google Map HTML to the DOM or create new one
+            if (existingMap) {
+                google_map.value.appendChild(existingMap);
+            } else {
+                useGoogleMapHTML().value = google_map.value; // Save google map html
+                initializeGoogleMap(google_map.value); // Init Google Map
+            }
         });
 
         return { google_map };
@@ -24,8 +30,8 @@ export default defineComponent({
 <style scoped>
 #map {
     /* Define Map measures */
-    height: 400px;
-    width: 50%;
+    height: 600px;
+    width: 800px;
 
     /* Center Map */
     margin: auto;

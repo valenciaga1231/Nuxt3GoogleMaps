@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
     devtools: { enabled: false },
     runtimeConfig: {
-        googleMapKey: "",
+        public: {
+            googleMapKey: process.env.NUXT_GOOGLE_MAP_KEY || "",
+        },
     },
 });

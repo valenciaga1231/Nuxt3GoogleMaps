@@ -6,20 +6,51 @@
             <br />
             <button @click="centerGoogleMap(0, 0)">Center</button>
         </div>
-        <GoogleMap />
+        <GoogleMap v-if="isGoogleMapMounted && isMapsLibraryLoaded" />
+        <div>
+            <div style="text-align: center; margin-top: 20px">
+                <button @click="toggleGoogleMap">{{ isGoogleMapMounted ? "Unmount" : "Mount" }} Google Map</button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 export default {
     setup() {
-        // Get necessary script for Map initializtion (google maps API key required!!)
-        if (process.server) {
-            const runtimeConfig = useRuntimeConfig();
-            useHead({ script: [{ src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.googleMapKey}&v=weekly`, defer: true }] });
-        }
+        const isGoogleMapMounted = ref(true);
+        const isMapsLibraryLoaded = ref(false);
+        const runtimeConfig = useRuntimeConfig();
 
-        return {};
+        useHead({
+            title: `Nuxt Google Map`,
+        });
+
+        onMounted(() => {
+            useHead({
+                script: [
+                    {
+                        src: `https://maps.googleapis.com/maps/api/js?key=${runtimeConfig.public.googleMapKey}&v=weekly`,
+                        async: true,
+                        defer: true,
+                        onload: () => {
+                            console.log("Google Maps API loaded");
+                            isMapsLibraryLoaded.value = true;
+                        },
+                    },
+                ],
+            });
+        });
+
+        const toggleGoogleMap = () => {
+            isGoogleMapMounted.value = !isGoogleMapMounted.value;
+        };
+
+        return {
+            isGoogleMapMounted,
+            isMapsLibraryLoaded,
+            toggleGoogleMap,
+        };
     },
 };
 </script>
